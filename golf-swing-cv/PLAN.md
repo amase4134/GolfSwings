@@ -89,7 +89,7 @@ Consistency beats model sophistication.
 - Same club category when comparing (e.g. driver vs driver)
 
 ### Pro reference library
-Start small — 5–10 public swings with clear side/face-on views (YouTube fair-use for personal analysis; do not redistribute copyrighted footage).
+Start small — 5–10 public swings with clear side/face-on views (YouTube fair-use for personal analysis; do not redistribute copyrighted footage). For a fuller survey of GolfDB, Kaggle, coaching sites, licensing caveats, and labeling schema, see [DATASET_SOURCES.md](./DATASET_SOURCES.md).
 
 Store as:
 
