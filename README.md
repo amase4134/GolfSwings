@@ -6,4 +6,4 @@ Weekend / exploratory projects.
 
 | Project | Description | Status |
 |---|---|---|
-| [golf-swing-cv](./golf-swing-cv/) | Compare your swing videos to pro golfers with computer vision | Plan |
+| [golf-swing-cv](./golf-swing-cv/) | Compare your swing videos to pro golfers with computer vision | Session splitter live; pose compare planned |
