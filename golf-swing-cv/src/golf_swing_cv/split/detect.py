@@ -31,9 +31,13 @@ class DetectionConfig:
     # Drop weak detections vs the strongest swing in the session (0 disables)
     min_peak_ratio: float = 0.25
 
-    # Output padding around detected motion
+    # Output padding around detected motion.
+    # post_pad keeps the simulator ball-flight camera after the body stops.
+    # On bay footage the tracer was still in the air ~7s after motion end
+    # and the follow-cam was back on the hole view by ~8s, so 8.5s covers
+    # a typical flight plus a short hold on the landing.
     pre_pad_sec: float = 1.0
-    post_pad_sec: float = 1.5
+    post_pad_sec: float = 8.5
 
     def validate(self) -> None:
         if self.smooth_sec < 0:

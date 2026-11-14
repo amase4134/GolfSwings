@@ -58,7 +58,7 @@ golf-swing-split path/to/session.mp4 --copy
 | `--sensitivity` | `3.0` | Higher → fewer / stronger swings only |
 | `--min-swing` / `--max-swing` | `0.8` / `6.0` | Motion duration bounds (seconds) |
 | `--min-gap` | `2.0` | Refractory period between swing peaks |
-| `--pre-pad` / `--post-pad` | `1.0` / `1.5` | Extra context around detected motion |
+| `--pre-pad` / `--post-pad` | `1.0` / `8.5` | Context before motion, and tail long enough for on-screen ball flight |
 | `--close-gap` | `0.55` | Fill brief quiet holes inside one swing |
 | `--min-peak-ratio` | `0.25` | Drop swings weaker than this fraction of the strongest peak |
 | `--analyze-fps` | `15` | Analysis sample rate |
@@ -82,6 +82,7 @@ data/processed/swings/
 - If walks between shots are detected as swings: raise `--sensitivity` or `--min-swing`
 - If one swing is split in two: raise `--close-gap` slightly
 - If address/setup is clipped: raise `--pre-pad`
+- `--post-pad` is the tail after body motion stops. The default `8.5` covers a typical simulator follow-cam (tracer still in the air around 7s, hole view back by about 8s). Raise it if a longer flight is cut; nearby shots will overlap when the gap is shorter than the pad.
 
 ## Limits (v1)
 

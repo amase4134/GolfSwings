@@ -89,9 +89,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--post-pad",
         type=float,
-        default=1.5,
+        default=8.5,
         dest="post_pad_sec",
-        help="Seconds to include after detected motion",
+        help="Seconds to include after detected motion (covers simulator ball flight)",
     )
     parser.add_argument(
         "--close-gap",
