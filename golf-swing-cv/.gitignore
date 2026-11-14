@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local media + outputs
+data/me/
+data/pros/
+data/raw/
+data/processed/
+*.mp4
+*.mov
+*.avi
+*.mkv
+!tests/fixtures/**/*.mp4
+
+# Previews / notebooks
+*.png
+!docs/**/*.png
+.ipynb_checkpoints/

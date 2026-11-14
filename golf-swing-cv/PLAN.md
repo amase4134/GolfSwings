@@ -116,7 +116,8 @@ Tag each clip with: golfer, club, view (`dtl` | `faceon`), handedness, fps, note
 - **Exit criteria:** one local script produces an annotated MP4 + CSV
 
 ### Phase 1 — Swing segmentation
-- Detect swing window (start motion → finish stillness)
+- **Session splitter (done):** motion-energy detection to cut long simulator recordings into per-swing clips (`golf-swing-split` — see [SPLITTER.md](./SPLITTER.md))
+- Detect swing window inside a single clip (start motion → finish stillness)
 - Label approximate key frames (top = max lead-wrist height or shoulder turn; impact ≈ club near ball / hands lowest forward, depending on view)
 - Manual keyframe override in UI for bad auto-detects
 - **Exit criteria:** reliable key positions on your own footage with optional manual tweak
@@ -153,16 +154,19 @@ Tag each clip with: golfer, club, view (`dtl` | `faceon`), handedness, fps, note
 ```
 golf-swing-cv/
   PLAN.md
+  SPLITTER.md
   README.md
   pyproject.toml / requirements.txt
-  src/
-    ingest/          # video load, resize, fps normalize
-    pose/            # MediaPipe wrapper, landmark I/O
+  src/golf_swing_cv/
+    ingest/          # video load / probe
+    split/           # session → per-swing clips (motion energy)
+    pose/            # MediaPipe wrapper, landmark I/O (next)
     phases/          # key-position detection
     metrics/         # angles, tempo, sequencing
     compare/         # alignment + diffs
     viz/             # overlays, plots
     app/             # Streamlit entrypoint
+    cli.py
   data/              # gitignored videos; keep small samples if needed
   notebooks/         # exploration only
   tests/
@@ -199,13 +203,14 @@ If that loop is useful on the range, then invest in club tracking and polish.
 
 ## First implementation tickets
 
-1. Bootstrap Python project + MediaPipe pose demo script
-2. Landmark CSV schema + annotated video writer
-3. Filming checklist + `data/` conventions
-4. Key-position detector with manual override
-5. Angle metrics at key positions
-6. Two-swing aligner + diff report
-7. Streamlit upload / compare UI
+1. ~~Bootstrap Python project + session swing splitter~~
+2. MediaPipe pose demo script on a single exported swing
+3. Landmark CSV schema + annotated video writer
+4. Filming checklist + `data/` conventions
+5. Key-position detector with manual override
+6. Angle metrics at key positions
+7. Two-swing aligner + diff report
+8. Streamlit upload / compare UI
 
 ---
 
