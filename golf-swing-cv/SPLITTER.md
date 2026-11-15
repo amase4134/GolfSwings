@@ -84,6 +84,10 @@ data/processed/swings/
 - If address/setup is clipped: raise `--pre-pad`
 - `--post-pad` is the tail after body motion stops. The default `8.5` covers a typical simulator follow-cam (tracer still in the air around 7s, hole view back by about 8s). Raise it if a longer flight is cut; nearby shots will overlap when the gap is shorter than the pad.
 
+## Processing skill
+
+To turn a new raw simulator session into reviewed swing clips, follow [.cursor/skills/process-swing-clips/SKILL.md](../.cursor/skills/process-swing-clips/SKILL.md). Raw files stay flat in `data/raw/`. Clips for one place and date go in `data/processed/{place}_{MM.DD.YYYY}/`. Keep a clip only when the simulator shows a new club-head speed after a ball strike, then delete the rest and leave `manifest.json` matching the files that remain. Naming is a later skill.
+
 ## Limits (v1)
 
 - Motion-based, not pose-based — someone walking through frame can look like a swing
