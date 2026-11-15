@@ -86,7 +86,11 @@ data/processed/swings/
 
 ## Processing skill
 
-To turn a new raw simulator session into reviewed swing clips, follow [.cursor/skills/process-swing-clips/SKILL.md](../.cursor/skills/process-swing-clips/SKILL.md). Raw files stay flat in `data/raw/`. Clips for one place and date go in `data/processed/{place}_{MM.DD.YYYY}/`. Keep a clip only when the simulator shows a new club-head speed after a ball strike, then delete the rest and leave `manifest.json` matching the files that remain. Naming is a later skill.
+To turn a new raw simulator session into reviewed swing clips, follow [.cursor/skills/process-swing-clips/SKILL.md](../.cursor/skills/process-swing-clips/SKILL.md). Raw files stay flat in `data/raw/`. Clips for one place and date go in `data/processed/{place}_{MM.DD.YYYY}/`. Keep a clip only when the simulator shows a new club-head speed after a ball strike, then delete the rest and leave `manifest.json` matching the files that remain.
+
+## Head speed
+
+After clips are reviewed, append the simulator Head Speed with [.cursor/skills/name-head-speed/SKILL.md](../.cursor/skills/name-head-speed/SKILL.md). One decimal, `_{speed}mph` before `.mp4`. Do not choose the club.
 
 ## Limits (v1)
 

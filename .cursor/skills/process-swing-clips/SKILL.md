@@ -7,7 +7,7 @@ description: >-
 
 # Process swing clips
 
-Do not name clips. Naming is a later skill. Do not rename clips that already exist.
+Do not name clips here. Head speed is [name-head-speed](../name-head-speed/SKILL.md). Do not rename clips that already exist.
 
 ## Steps
 
