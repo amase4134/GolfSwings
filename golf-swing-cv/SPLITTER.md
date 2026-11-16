@@ -81,8 +81,9 @@ data/processed/swings/
 - If the **ball-flight screen** flickers: pass `--roi` covering only you / the mat
 - If walks between shots are detected as swings: raise `--sensitivity` or `--min-swing`
 - If one swing is split in two: raise `--close-gap` slightly
-- If address/setup is clipped: raise `--pre-pad`
+- If address/setup is clipped: raise `--pre-pad` (try `3.5` when motion starts at the downswing). Keep `--post-pad` at `8.5` unless ball flight is still cut.
 - `--post-pad` is the tail after body motion stops. The default `8.5` covers a typical simulator follow-cam (tracer still in the air around 7s, hole view back by about 8s). Raise it if a longer flight is cut; nearby shots will overlap when the gap is shorter than the pad.
+- For a comparison re-export, write to a sibling folder (for example `data/processed/{place}_{MM.DD.YYYY}_compare_prepad3.5/`) so the previous processed clips stay available side by side.
 
 ## Processing skill
 
